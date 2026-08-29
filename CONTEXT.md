@@ -12,24 +12,26 @@ Also, as of 2026-07-17: [official Python Institute PCEP-30-02 syllabus](https://
 
 ## Exam blueprint → notebook mapping
 
-**PCEP-30-02 prerequisite blocks (00a–00d):**
+**Naming convention (updated 2026-07-18):** every notebook across all four PythonNotebooks tracks now follows `<prefix>_<NN>_<description>.ipynb`, where `<prefix>` identifies the source (`pcep`, `pcap`, `atbs`, `ep`) and `<NN>` is that source's own chapter/block number — matching the pattern already used by the ATBS (`atbs_01`…`atbs_24`) and Effective Python (`ep_01`…`ep_14`) tracks. The old `00a`–`00d` / bare `01`–`05` filenames were renamed accordingly; content is byte-for-byte unchanged, only the filenames moved.
+
+**PCEP-30-02 prerequisite blocks:**
 
 | # | Notebook | Official PCEP block | Items | Weight |
 |---|----------|----------------------|-------|--------|
-| 00a | `00a_pcep_fundamentals.ipynb` | Block 1 — Computer Programming and Python Fundamentals | 7 | 18% |
-| 00b | `00b_pcep_control_flow.ipynb` | Block 2 — Control Flow | 8 | **29%** (heaviest PCEP block) |
-| 00c | `00c_pcep_data_collections.ipynb` | Block 3 — Data Collections (Tuples, Dictionaries, Lists, Strings) | 7 | 25% |
-| 00d | `00d_pcep_functions_and_exceptions.ipynb` | Block 4 — Functions and Exceptions | 8 | 28% |
+| 1 | `pcep_01_fundamentals.ipynb` | Block 1 — Computer Programming and Python Fundamentals | 7 | 18% |
+| 2 | `pcep_02_control_flow.ipynb` | Block 2 — Control Flow | 8 | **29%** (heaviest PCEP block) |
+| 3 | `pcep_03_data_collections.ipynb` | Block 3 — Data Collections (Tuples, Dictionaries, Lists, Strings) | 7 | 25% |
+| 4 | `pcep_04_functions_and_exceptions.ipynb` | Block 4 — Functions and Exceptions | 8 | 28% |
 
-**PCAP-31-03 exam sections (01–05):**
+**PCAP-31-03 exam sections:**
 
 | # | Notebook | Official section | Items | Weight |
 |---|----------|-------------------|-------|--------|
-| 1 | `01_modules_and_packages.ipynb` | Modules and Packages | 6 | 12% |
-| 2 | `02_exceptions.ipynb` | Exceptions | 5 | 14% |
-| 3 | `03_strings.ipynb` | Strings (+ list methods, §3.4) | 8 | 18% |
-| 4 | `04_oop.ipynb` | Object-Oriented Programming | 12 | **34%** (biggest) |
-| 5 | `05_comprehensions_lambdas_closures_io.ipynb` | Miscellaneous (comprehensions, lambdas, closures, I/O) | 9 | 22% |
+| 1 | `pcap_01_modules_and_packages.ipynb` | Modules and Packages | 6 | 12% |
+| 2 | `pcap_02_exceptions.ipynb` | Exceptions | 5 | 14% |
+| 3 | `pcap_03_strings.ipynb` | Strings (+ list methods, §3.4) | 8 | 18% |
+| 4 | `pcap_04_oop.ipynb` | Object-Oriented Programming | 12 | **34%** (biggest) |
+| 5 | `pcap_05_comprehensions_lambdas_closures_io.ipynb` | Miscellaneous (comprehensions, lambdas, closures, I/O) | 9 | 22% |
 
 ## Scope note (added 2026-07-11, second pass)
 
@@ -38,41 +40,59 @@ Javier compared the notebooks against the two official free prep courses on Cisc
 - **PE1 (PCEP)** covers Lists/List Processing (its Module 3) and Tuples/Dictionaries (its Module 4) — this is prerequisite material PCAP assumes you already know, which is why the original 5 notebooks (scoped strictly to the PCAP-31-03 exam syllabus) didn't include it.
 - **PE2 (PCAP prep)** Module 1–4 map almost exactly to the official exam's 5 sections, confirming notebooks 1–5 are correctly scoped — **except** PE2's Module 2 is literally titled "Strings, **String and List Methods**, Exceptions," meaning the real PCAP prep course does pair list methods with string methods even though the terse exam-syllabus text only lists string-specific items.
 
-Resolution (first pass): added a single prerequisites notebook (lists, tuples, dictionaries, nesting) and a new §3.4 in `03_strings.ipynb` (list methods in parallel with string methods, mirroring PE2 Module 2 exactly).
+Resolution (first pass): added a single prerequisites notebook (lists, tuples, dictionaries, nesting) and a new §3.4 in `pcap_03_strings.ipynb` (list methods in parallel with string methods, mirroring PE2 Module 2 exactly).
 
 ## Scope note (added 2026-07-17, third pass — full PCEP closure)
 
-Javier kept finding gaps one at a time (control-flow — `if`/`for`/`while` — was nowhere; most of PE1's fundamentals and functions content was missing too) and asked for a single complete review of the entire PCEP-30-02 syllabus before any more building, rather than patching reactively. Fetched the full official PCEP-30-02 syllabus (4 blocks, 30 sub-items total) and rebuilt the prerequisite material as **four notebooks that mirror the official PCEP blocks exactly**, replacing the old single prerequisites notebook:
+Javier kept finding gaps one at a time (control-flow — `if`/`for`/`while` — was nowhere; most of PE1's fundamentals and functions content was missing too) and asked for a single complete review of the entire PCEP-30-02 syllabus before any more building, rather than patching reactively. Fetched the full official PCEP-30-02 syllabus (4 blocks, 30 sub-items total) and rebuilt the prerequisite material as **four notebooks that mirror the official PCEP blocks exactly** (`pcep_01`–`pcep_04`, renamed 2026-07-18 from the original `00a`–`00d` filenames), replacing the old single prerequisites notebook:
 
-- `00a_pcep_fundamentals.ipynb` — Block 1: interpreting vs. compiling, keywords, indentation, comments, literals, variables, numeral systems (binary/octal/hex), operators incl. bitwise, floating-point pitfalls, `print()`/`input()`.
-- `00b_pcep_control_flow.ipynb` — Block 2: `if`/`elif`/`else`, `while`/`for`/`range()`, `break`/`continue`/`pass`, the `for`-`else`/`while`-`else` pattern.
-- `00c_pcep_data_collections.ipynb` — Block 3: supersedes the old prerequisites notebook; lists (incl. comprehensions, matrices, the copy-vs-clone trap), tuples, dictionaries, strings (cross-references `03_strings.ipynb` for PCAP-level depth).
-- `00d_pcep_functions_and_exceptions.ipynb` — Block 4: functions, `return`, recursion, generators (`yield`), parameter passing, scope/`global`, exception hierarchy taxonomy, `try`/`except` ordering.
+- `pcep_01_fundamentals.ipynb` — Block 1: interpreting vs. compiling, keywords, indentation, comments, literals, variables, numeral systems (binary/octal/hex), operators incl. bitwise, floating-point pitfalls, `print()`/`input()`.
+- `pcep_02_control_flow.ipynb` — Block 2: `if`/`elif`/`else`, `while`/`for`/`range()`, `break`/`continue`/`pass`, the `for`-`else`/`while`-`else` pattern.
+- `pcep_03_data_collections.ipynb` — Block 3: supersedes the old prerequisites notebook; lists (incl. comprehensions, matrices, the copy-vs-clone trap), tuples, dictionaries, strings (cross-references `pcap_03_strings.ipynb` for PCAP-level depth).
+- `pcep_04_functions_and_exceptions.ipynb` — Block 4: functions, `return`, recursion, generators (`yield`), parameter passing, scope/`global`, exception hierarchy taxonomy, `try`/`except` ordering.
 
-This closes every remaining gap against both the PCEP-30-02 and PCAP-31-03 official syllabi — no more known missing topics. `00_prerequisites_lists_tuples_dicts.ipynb` was deleted (fully superseded by 00a–00d).
+This closes every remaining gap against both the PCEP-30-02 and PCAP-31-03 official syllabi — no more known missing topics. `00_prerequisites_lists_tuples_dicts.ipynb` was deleted (fully superseded by `pcep_01`–`pcep_04`).
+
+## Filename rename (2026-07-18)
+
+Javier said he was losing track of which files belonged to which source once four tracks (PCEP, PCAP, ATBS, Effective Python) shared one folder. Renamed the PCEP/PCAP notebooks to match the `<prefix>_<NN>_<description>.ipynb` convention already used by `atbs_*` and `ep_*`:
+
+| Old filename | New filename |
+|---|---|
+| `00a_pcep_fundamentals.ipynb` | `pcep_01_fundamentals.ipynb` |
+| `00b_pcep_control_flow.ipynb` | `pcep_02_control_flow.ipynb` |
+| `00c_pcep_data_collections.ipynb` | `pcep_03_data_collections.ipynb` |
+| `00d_pcep_functions_and_exceptions.ipynb` | `pcep_04_functions_and_exceptions.ipynb` |
+| `01_modules_and_packages.ipynb` | `pcap_01_modules_and_packages.ipynb` |
+| `02_exceptions.ipynb` | `pcap_02_exceptions.ipynb` |
+| `03_strings.ipynb` | `pcap_03_strings.ipynb` |
+| `04_oop.ipynb` | `pcap_04_oop.ipynb` |
+| `05_comprehensions_lambdas_closures_io.ipynb` | `pcap_05_comprehensions_lambdas_closures_io.ipynb` |
+
+Content is unchanged — only filenames moved. Old files were removed after confirming the new copies were byte-for-byte identical.
 
 ## Content checklist
 
 Each subsection below is tagged with its official objective number (PCEP-30-02 for 00a–00d, PCAP-31-03 for 1–5). All are filled in with real explanation + runnable, execution-verified example code.
 
-### 00a. PCEP Block 1 — Computer Programming and Python Fundamentals (18%)
+### PCEP 1. Block 1 — Computer Programming and Python Fundamentals (18%)
 - [x] 1.1 Interpreting vs. compiling, lexis/syntax/semantics
 - [x] 1.2 Keywords (`keyword.kwlist`), indentation, comments
 - [x] 1.3 Literals, variables, numeral systems (binary `0b`, octal `0o`, hex `0x`, `bin()`/`oct()`/`hex()`), PEP-8 naming
 - [x] 1.4 Operators — numeric, string, bitwise (`& | ^ ~ << >>`), boolean, relational, precedence; floating-point accuracy trap (`0.1 + 0.2 != 0.3`); type casting
 - [x] 1.5 I/O — `print(sep=, end=)`, `input()` always returns `str`
 
-### 00b. PCEP Block 2 — Control Flow (29%, heaviest)
+### PCEP 2. Block 2 — Control Flow (29%, heaviest)
 - [x] 2.1 `if`/`elif`/`else`, nesting conditionals
 - [x] 2.2 `while`/`for`/`range()`, `pass`/`break`/`continue`, the `for`-`else`/`while`-`else` pattern (loop completes without `break`)
 
-### 00c. PCEP Block 3 — Data Collections (25%) — supersedes old prerequisites notebook
+### PCEP 3. Block 3 — Data Collections (25%) — supersedes old prerequisites notebook
 - [x] 3.1 Lists (indexing, slicing, methods, comprehensions, matrices/nested lists, copy-vs-clone trap: `b = a` vs `a.copy()`)
 - [x] 3.2 Tuples (immutability, unpacking)
 - [x] 3.3 Dictionaries (access, `get`, `update`, `pop`, `.items()`)
-- [x] 3.4 Strings (lighter PCEP-level pass; full depth in `03_strings.ipynb`)
+- [x] 3.4 Strings (lighter PCEP-level pass; full depth in `pcap_03_strings.ipynb`)
 
-### 00d. PCEP Block 4 — Functions and Exceptions (28%)
+### PCEP 4. Block 4 — Functions and Exceptions (28%)
 - [x] 4.1 Functions, `return`, `None`, recursion (factorial), generators (`yield`/`next()`)
 - [x] 4.2 Positional/keyword/default args, scope, `global` vs. shadowing
 - [x] 4.3 Exception hierarchy taxonomy (`.__bases__`, `issubclass()`, catching via parent class)
